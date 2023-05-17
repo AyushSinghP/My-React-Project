@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       <Common
-        name="Wellcom to About Page"
+        name="Welcome to About Page"
         btn="Contact Now"
         visit="/contact"
         image={web2}

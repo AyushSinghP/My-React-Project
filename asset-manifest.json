@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/My-React-Project/static/css/main.5b811cd3.css",
-    "main.js": "/My-React-Project/static/js/main.2cb719b7.js",
+    "main.css": "/My-React-Project/static/css/main.e285a2fc.css",
+    "main.js": "/My-React-Project/static/js/main.051cfce3.js",
     "static/media/img5.jpg": "/My-React-Project/static/media/img5.ed4c5a1992e0c288296f.jpg",
     "static/media/img3.jpg": "/My-React-Project/static/media/img3.7fecf7a78d6fb0a0d0d6.jpg",
     "static/media/img2.jpg": "/My-React-Project/static/media/img2.1499065a68ed2d740d19.jpg",
     "static/media/img4.jpg": "/My-React-Project/static/media/img4.10415744af63cfffdcf2.jpg",
     "static/media/img7.jpg": "/My-React-Project/static/media/img7.40dbd895879b1d3c11e0.jpg",
     "index.html": "/My-React-Project/index.html",
-    "main.5b811cd3.css.map": "/My-React-Project/static/css/main.5b811cd3.css.map",
-    "main.2cb719b7.js.map": "/My-React-Project/static/js/main.2cb719b7.js.map"
+    "main.e285a2fc.css.map": "/My-React-Project/static/css/main.e285a2fc.css.map",
+    "main.051cfce3.js.map": "/My-React-Project/static/js/main.051cfce3.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b811cd3.css",
-    "static/js/main.2cb719b7.js"
+    "static/css/main.e285a2fc.css",
+    "static/js/main.051cfce3.js"
   ]
 }

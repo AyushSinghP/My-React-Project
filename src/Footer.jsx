@@ -5,8 +5,8 @@ const Footer = () => {
     <>
       <footer className="bg-light text-center">
         <p>
-          @ 2023 Ayush Thakur. All Rights Reserved | Terms And Comdition Are
-          Follow
+          @ 2023 Ayush Thakur. All Rights Reserved | Terms And Condition Are
+          Follows
         </p>
       </footer>
     </>

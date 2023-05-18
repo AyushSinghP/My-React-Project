@@ -104,3 +104,41 @@ footer p{
   text-align: center;
   }
 }
+.mb-3 {
+  display: inline-grid;
+    display: inherit;
+    margin: auto;
+    text-align: center;
+}
+
+.form_data {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  /* background-color: aqua; */
+  color: blue;
+}
+.col-12 {
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+form {
+  /* border: 2px solid; */
+  width: 62%;
+  /* margin: auto; */
+  display: flex;
+  display: inline;
+  background-color: aliceblue;
+  border-radius: 9px;
+}
+.input_field {
+  background-color: #21eded;
+  color: #742c2c;
+  border: 2px solid darkblue;
+  border-radius: 11px;
+  padding-left: 6px;
+}
+p.form_errors {
+  margin-bottom: -24px;
+}

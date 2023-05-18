@@ -1,96 +1,114 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFormik } from "formik";
+import { signUpSchema } from "./schemas/Index";
 
+const initialValues = {
+  name: "",
+  email: "",
+  password: "",
+  confirm_password: "",
+};
 const Contact = () => {
-  const [data, setdata] = useState({
-    fullname: "",
-    phone: "",
-    email: "",
-    msg: "",
-  });
-  const InputEvent = (event) => {
-    const { name, value } = event.target;
-
-    setdata((preVal) => {
-      return {
-        ...preVal,
-        [name]: value,
-      };
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: initialValues,
+      validationSchema: signUpSchema,
+      onSubmit: (value, action) => {
+        console.log(value);
+        action.resetForm();
+      },
     });
-  };
-  const formSubmit = (event) => {
-    event.preventDefault();
-    alert(
-      `Your Name is ${data.fullname} and your number is ${data.phone} and email is ${data.email} and msg ${data.msg}`
-    );
-  };
   return (
     <>
       <div className="my-5">
         <h1 className="text-center">Contact Us!</h1>
       </div>
-      <div className="container Constact_div">
-        <div className="row">
-          <div className="col-md-6 col-10 mx-auto">
-            <form onSubmit={formSubmit}>
-              <div className="mb-3">
-                <label for="exampleFormControlInput1" className="form-label">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="exampleFormControlInput1"
-                  name="fullname"
-                  value={data.fullname}
-                  onChange={InputEvent}
-                  placeholder="Enter Your Name"
-                />
-                <label for="exampleFormControlInput1" className="form-label">
-                  Contact
-                </label>
-                <input
-                  type="number"
-                  className="form-control"
-                  id="exampleFormControlInput1"
-                  name="phone"
-                  value={data.phone}
-                  onChange={InputEvent}
-                  placeholder="Enter Your Number"
-                />
-                <label for="exampleFormControlInput1" className="form-label">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="exampleFormControlInput1"
-                  name="email"
-                  value={data.email}
-                  onChange={InputEvent}
-                  placeholder="Enter Your Email"
-                />
-              </div>
-              <div className="mb-3">
-                <label for="exampleFormControlTextarea1" className="form-label">
-                  Message
-                </label>
-                <textarea
-                  className="form-control"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                  name="msg"
-                  value={data.msg}
-                  onChange={InputEvent}
-                ></textarea>
-              </div>
-              <div className="col-12">
-                <button className="btn btn-outline-primary" type="submit">
-                  Submit form
-                </button>
-              </div>
-            </form>
+      <div className="form_data">
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="name" className="input-label">
+              Name
+            </label>
+            <br />
+            <input
+              type="name"
+              className="input_field"
+              autoComplete="off"
+              name="name"
+              id="name"
+              placeholder="name"
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {errors.name && touched.name ? (
+              <p className="form_errors">{errors.name}</p>
+            ) : null}
+            <br />
+            <label htmlFor="email" className="input-label">
+              Email
+            </label>
+            <br />
+            <input
+              type="email"
+              className="input_field"
+              autoComplete="off"
+              name="email"
+              id="email"
+              placeholder="email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {errors.email && touched.email ? (
+              <p className="form_errors">{errors.email}</p>
+            ) : null}
+            <br />
+            <label htmlFor="password" className="input-label">
+              Password
+            </label>
+            <br />
+            <input
+              type="password"
+              className="input_field"
+              autoComplete="off"
+              name="password"
+              id="password"
+              placeholder="password"
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {errors.password && touched.password ? (
+              <p className="form_errors">{errors.password}</p>
+            ) : null}
+            <br />
+            <label htmlFor="password" className="input-label">
+              Confirm Password
+            </label>
+            <br />
+            <input
+              type="password"
+              className="input_field"
+              autoComplete="off"
+              name="confirm_password"
+              id="confirm_password"
+              placeholder="Confirm_Password"
+              value={values.confirm_password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {errors.confirm_password && touched.confirm_password ? (
+              <p className="form_errors">{errors.confirm_password}</p>
+            ) : null}
+            <br />
           </div>
-        </div>
+          <div className="col-12">
+            <button className="btn btn-outline-primary" type="submit">
+              Submit form
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );
